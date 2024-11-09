@@ -1,0 +1,44 @@
+clc;
+clear all;
+amp=input("Enter amplitude of signal=");
+freq=input("Enter the frequency=");
+cy=input("Enter the number of cycles=");
+t=0:(1/(freq*freq)):cy/freq;
+amplitude=amp*sin(2*pi*freq*t);
+subplot(221);
+plot(t,amplitude);
+xlabel("time");
+ylabel("Amplitude");
+title("------Sine Wave------");
+subplot(222);
+fs1=1.5*freq;
+t1=0:(1/(fs1)):cy/freq;
+amplitude3=amp*sin(2*pi*freq*t1);
+plot(t1,amplitude3);
+xlabel("time");
+ylabel("Amplitude");
+title("------Undersampling------");
+grid on;
+subplot(223);
+fs2=20*freq;
+t2=0:(1/(fs2)):cy/freq;
+amplitude2=amp*sin(2*pi*freq*t2);
+plot(t2,amplitude2);
+xlabel("time");
+ylabel("Amplitude");
+title("------Oversampling------");
+grid on;
+subplot(224);
+fs3=3*freq;
+t3=0:(1/(fs3)):cy/freq;
+amplitude3=amp*sin(2*pi*freq*t3);
+plot(t3,amplitude3);
+xlabel("time");
+ylabel("Amplitude");
+title("------Nyquist sampling------");
+grid on;
+
+
+
+
+the above code is to show various conditions of a sine wave with changing frequencies

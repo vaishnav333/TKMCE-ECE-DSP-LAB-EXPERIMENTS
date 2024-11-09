@@ -1,0 +1,35 @@
+clc;
+clear all;
+close all;
+disp('------8. Parsevals Theorem----');
+x=input('Enter the sequence : ');
+N=length(x);
+y=dft(x);
+X=sum((abs(x)).^2);
+Y=sum((abs(y)).^2)/N;
+disp('DFT of x : ');
+disp(y');
+disp('Sum of |x|^2 : ');
+disp(X);
+disp('1/N * Sum of |DFT(x)|^2 : ');
+disp(Y);
+if X==Y
+    disp('Parsevals Theorem of DFT is verified');
+else
+    disp('Parsevals Theorem of DFT is not verified');
+end
+
+
+function y=dft(x)
+N=length(x);
+y=zeros(1,N);
+for k=1:N
+    for n=1:N
+        y(k)=y(k)+exp(-1i*2*pi*(k-1)*(n-1)/N)*x(n);
+    end
+end
+end
+
+
+
+the above is the matlab code for Parseval’s Theorem

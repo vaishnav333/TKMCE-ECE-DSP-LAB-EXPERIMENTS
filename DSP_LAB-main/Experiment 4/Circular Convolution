@@ -1,0 +1,51 @@
+clc;
+clear all;
+x1=input("Enter the 1st matrix =");
+x2=input("Enter the 2nd matrix =");
+N=length(x1);
+M=length(x2);
+L=max(N,M);
+subplot(221);
+sample_points=1:1:N;
+stem(sample_points,x1);
+xlabel('Sample Points');
+ylabel('Amplitude');
+title('Sample 1');
+subplot(222);
+sample_points_1=1:1:M;
+stem(sample_points_1,x2);
+xlabel('Sample Points');
+ylabel('Amplitude');
+title('Sample 2');
+if (N~=M)
+    if (N>M)
+        x2=[x2 zeros(1,N-M)];
+    else
+        x1=[x1 zeros(1,M-N)];
+    end
+end
+x1_mat=zeros(L,L);
+for i=1:L
+    x1_mat(:,i)=circshift(x1(:),i-1);
+end
+y=x1_mat*x2(:);
+yt=y'
+disp(yt);
+yb=cconv(x1,x2,L);
+disp (yb);
+subplot(223);
+sample_points_2=1:1:L;
+stem(sample_points_2,yt);
+xlabel('Sample Points');
+ylabel('Amplitude');
+title('User Defined Function');
+subplot(224);
+sample_points_3=1:1:N;
+stem(sample_points_3,yb);
+xlabel('Sample Points');
+ylabel('Amplitude');
+title('Inbuilt Function');
+
+
+
+the above code performs circular convolution for the given set of inputs

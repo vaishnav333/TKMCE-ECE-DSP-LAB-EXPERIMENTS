@@ -1,0 +1,21 @@
+clc;
+clear all;
+n1=input("Enter the starting point=");
+n2=input("Enter the ending point=");
+sample_point=-n1:1:n2;
+amplitude=[zeros(1,n1) 1 ones(1,n2)];
+subplot(121);
+stem(sample_point,amplitude);
+xlabel("Samples");
+ylabel("Amplitude");
+grid on;
+subplot(122);
+plot(sample_point,amplitude);
+xlabel("Samples");
+ylabel("Amplitude");
+grid on;
+
+
+
+
+the above given code is to show the unit step signa for a given signal

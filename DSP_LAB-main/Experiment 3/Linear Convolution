@@ -1,0 +1,45 @@
+clc;
+clear all;
+N=input("Enter the length of x[n]=");
+M=input("Enter the length of h[n]=");
+x1=input("Enter the sequence of x[n]=");
+x2=input("Enter the sequence of h[n]=");
+L=N+M-1;
+Y=zeros(1,L);
+for (i=1:N)
+    for (k=1:M)
+        Y(i+k-1)=Y(i+k-1)+x1(i)*x2(k);
+    end
+end
+disp(Y);
+y1=conv(x1,x2);
+disp(y1);
+subplot(221);
+sample_points=1:1:N;
+stem(sample_points,x1);
+xlabel("Sample Points");
+ylabel("Amplitude");
+title("Sample 1");
+subplot(222);
+sample_points=1:1:M;
+stem(sample_points,x2);
+xlabel("Sample Points");
+ylabel("Amplitude");
+title("Sample 2");
+subplot(223);
+sample_points=1:1:L;
+stem(sample_points,Y);
+xlabel("Sample Points");
+ylabel("Amplitude");
+title("User Defined Function");
+subplot(224);
+sample_points=1:1:L;
+stem(sample_points,y1);
+xlabel("Sample Points");
+ylabel("Amplitude");
+title("Inbuilt Function");
+
+
+
+
+the above given function is to show linear convolution being performed using user defined and inbuilt functions

@@ -1,0 +1,18 @@
+clc;
+clear all;
+n1=input("Enter the starting point=");
+n2=input("Enter the ending point=");
+sample_point=-n1:1:n2;
+amplitude=[zeros(1,n1) 1 zeros(1,n2)];
+subplot(121);
+grid on;
+xlabel("Samples");
+ylabel("Amplitude");
+stem(sample_point,amplitude);
+subplot(122);
+plot(sample_point,amplitude);
+xlabel("Samples");
+ylabel("Amplitude");
+grid on;
+
+the above code is to check the impluse response of a given signal

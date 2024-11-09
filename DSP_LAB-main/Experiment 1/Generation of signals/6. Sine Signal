@@ -1,0 +1,19 @@
+clc;
+clear all;
+amp=input("Enter amplitude of signal=");
+freq=input("Enter the frequency=");
+cy=input("Enter the number of cycles=");
+t=0:(1/(50*freq)):cy/freq;
+amplitude=amp*sin(2*pi*freq*t);
+subplot(121);
+plot(t,amplitude);
+xlabel("time");
+ylabel("Amplitude");
+subplot(122);
+stem(t,amplitude);
+xlabel("time");
+ylabel("Amplitude");
+grid on;
+
+
+the above code is to give the sinusoidal singal for the given input

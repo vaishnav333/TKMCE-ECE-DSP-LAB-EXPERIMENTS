@@ -1,0 +1,46 @@
+clc;
+clear all;
+x=input("Enter 'x' values=");
+h=input("Enter 'h' values =");
+N=length(x);
+M=length(h);
+subplot(221);
+sample_point=1:1:N;
+stem(sample_point,x);
+xlabel('Sample points');
+ylabel('Amplitude');
+title('x[N]');
+subplot(222);
+sample_point_1=1:1:M;
+stem(sample_point_1,h);
+xlabel('Sample points');
+ylabel('Amplitude');
+title('h[N]');
+L=N+M-1;
+H=[h zeros(1,(L-M))];
+X=[x zeros(1,(L-N))];
+y=zeros(1,L);
+for i=1:L
+    for j=1:L
+        x(i)=y(i)+X(j)*H(mod(i-j,L)+1);
+    end
+end
+disp(y);
+Y1=conv(x,h);
+disp(Y1);
+subplot(223);
+sample_point_2=1:1:L;
+stem(sample_point_2,y);
+xlabel('Sample points');
+ylabel('Amplitude');
+title('User Defined Function');
+subplot(224);
+sample_point_3=1:1:L;
+stem(sample_point_3,x);
+xlabel('Sample points');
+ylabel('Amplitude');
+title('Inbuilt Function');
+
+
+
+the above code performs linear convolution on the given set of inputs by using circular convolution method 

@@ -1,0 +1,24 @@
+clc;
+clear all;
+n1=input("Enter the starting point=");
+n2=input("Enter the ending point=");
+sample_point=-n1:1:n2;
+amp_1=zeros(1,n1+1);
+for (i=1:n2)
+    amp_2(i)=i;
+end
+amplitude=[amp_1,amp_2];
+subplot(121);
+plot(sample_point,amplitude);
+xlabel("Samples");
+ylabel("Amplitude");
+grid on;
+subplot(122);
+stem(sample_point,amplitude);
+xlabel("Samples");
+ylabel("Amplitude");
+grid on;
+
+
+
+the above given code is to generate ramp signal for the given input

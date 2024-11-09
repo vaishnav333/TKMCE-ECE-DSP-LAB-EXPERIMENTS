@@ -1,0 +1,18 @@
+clc;
+clear all;
+x=input("Enter the sequence =");
+N=length(x);
+x1=zeros(1,N);
+for k=1:N
+    for n=1:N
+        x1(k)=x1(k)+x(n)*exp((-j*2*pi*(n-1)*(k-1))/N);
+    end
+end
+disp("DFT using User Defined Function");
+disp(x1);
+disp("DFT using Inbuilt Function");
+disp=fft(x,N);
+
+
+
+the above is the code for a user defined DFT function 

@@ -1,0 +1,24 @@
+clc;
+clear all;
+n1=input("Enter the starting point=");
+n2=input("Enter the ending point=");
+sample_point=-n1:1:n2;
+amp_1=zeros(1,n2+1);
+for (i=1:n2)
+    amp_2(i)=(i*n2)/2;
+end
+amplitude=[amp_1,amp_2];
+subplot(121);
+stem(sample_point,amplitude);
+xlabel("Samples");
+ylabel("Amplitude");
+grid on;
+subplot(122);
+plot(sample_point,amplitude);
+xlabel("Samples");
+ylabel("Amplitude");
+grid on;
+
+
+
+the above code is to show a parabolic signal for the input given 

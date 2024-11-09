@@ -1,0 +1,20 @@
+clc;
+clear all;
+amp=input("Enter the amplitude=");
+N=input("Enter number of samples=");
+dec_fac=input("Enter the decreasing factor=");
+sample_point=0:1:N-1;
+amplitude=amp*exp(-dec_fac*sample_point);
+subplot(121);
+stem(sample_point,amplitude);
+xlabel("Samples");
+ylabel("Amplitude");
+grid on;
+subplot(122);
+plot(sample_point,amplitude);
+xlabel("Samples");
+ylabel("Amplitude");
+grid on;
+
+
+the above code is to view the exponential signal for the given inputs
